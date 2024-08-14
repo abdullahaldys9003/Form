@@ -3,7 +3,7 @@
 
 <?php
 
-include("conn.php");
+
 echo $_POST["name"];
 // إنشاء اتصال
 
