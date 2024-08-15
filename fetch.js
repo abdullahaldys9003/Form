@@ -8,7 +8,7 @@ async function createCategory() {
     // إضافة البيانات إلى نموذج البيانات
     formData.append('name', name);
     // إرسال طلب POST إلى الملف php
-    const response = await fetch('Form.php', {
+    const response = await fetch('https://databasepro.infinityfreeapp.com/index.php', {
       method: 'POST',
       body: formData,
     });
