@@ -8,27 +8,10 @@
 </head>
 <body>
   <button onclick="sendDataWithHeaders()">Send Data</button>
-  
-  <script>
-
-
-    
- function sendDataWithHeaders() {
-      fetch('https://databasepro.infinityfreeapp.com/p.php')
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok ' + response.statusText);
-    }
-    return response.json(); // assuming the response is in JSON format
-  })
-  .then(data => {
-    alert(data); // سيتم عرض البيانات المأخوذة من الخادم هنا
-  })
-  .catch(error => {
-    alert('There has been a problem with your fetch operation:', error);
-  });
-}
-  </script>
+  <form action = "https://databasepro.infinityfreeapp.com/index.php" method = "post">
+    <input name = "name" />
+    <button type = "submit" >add</button>
+  </form>
 </body>
 </html>
 
