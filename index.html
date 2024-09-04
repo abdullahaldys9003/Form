@@ -5,15 +5,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>My Page</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
-  
-  <form action = "https://databasepro.infinityfreeapp.com/index.php" method = "post">
-    <input name = "name" />
-    <button type = "submit" >add</button>
+
+  <form id="myForm">
+    <input name="name" id="nameInput" />
+    <button type="submit">Add</button>
   </form>
+
+  <script>
+    // استماع لحدث إرسال النموذج
+    document.getElementById('myForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // منع الإرسال الافتراضي للنموذج
+
+      // استرداد القيمة المدخلة
+      const name = document.getElementById('nameInput').value;
+
+      // إرسال البيانات باستخدام axios
+      axios.post('https://databasepro.infinityfreeapp.com/index.php', {
+        name: name
+      })
+      .then(function (response) {
+        alert('Success:', response.data);
+      })
+      .catch(function (error) {
+        alert('Error:', error);
+      });
+    });
+  </script>
+
 </body>
 </html>
-
-
-
